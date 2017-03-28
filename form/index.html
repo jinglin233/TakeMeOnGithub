@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <link rel="stylesheet" href="./style/form.css">
+</head>
+<body>
+<form id="formContainer" action="#" style="width: 500px" >
+    <fieldset>
+        <legend>注册信息</legend>
+        <div class="field-name">
+            <label for="userName">用户名：</label></div>
+        <input required maxlength="9" type="text" name="userName" id="userName" ><br>
+        <div class="field-name">
+            <label for="password">密码：</label></div>
+        <input required minlength="6" maxlength="15" type="password" name="password" id="password"><br>
+        <div class="field-name">
+            <label for="confirmPwd">确认密码：</label></div>
+        <input type="password" id="confirmPwd"><br>
+        <div class="field-name">
+            <label for="email">邮箱：</label></div>
+        <input type="email" name="email" id="email" required><br>
+        <div class="field-name">
+            <label for="mobileNumber">手机号码：</label></div>
+        <input type="tel" name="mobileNumber" id="mobileNumber"><br>
+        <div class="field-name">
+            <label>头像</label>
+        </div>
+        <img src="/TakeMeOnGithub/form/image/a.jpg" alt=""/><br>
+        <div class="field-name"></div><input type="file" name="icon" required>
+    </fieldset>
+    <fieldset>
+        <legend>用户基本信息</legend>
+        <div class="field-name">
+            <label for="name">姓名：</label></div>
+        <input type="text" id="name" name="name"><br>
+        <div class="field-name">
+            <label>性别：</label></div>
+        <label for="genderMan">男</label>
+        <input type="radio" name="gender" id="genderMan">
+        <label for="genderWomen">女</label>
+        <input type="radio" name="gender" id="genderWomen"><br>
+        <div class="field-name">
+            <label for="age">年龄：</label></div>
+        <input type="number" id="age" name="age"><br>
+        <div class="field-name">
+            <label>地址：</label></div>
+        <label for="province">省</label>
+        <select name="province" id="province">
+            <option value="">--请选择--</option>
+            <option value="四川">四川</option>
+            <option value="重庆">重庆</option>
+            <option value="云南">云南</option>
+            <option value="贵州">贵州</option>
+            <option value="湖南">湖南</option>
+            <option value="湖北">湖北</option>
+        </select>
+        <label for="city">市</label>
+        <select name="city" id="city">
+            <option value="">--请选择--</option>
+            <option value="成都">成都</option>
+            <option value="绵阳">绵阳</option>
+            <option value="南充">南充</option>
+            <option value="自贡">自贡</option>
+            <option value="西昌">西昌</option>
+            <option value="乐山">乐山</option>
+        </select>
+        <label for="district">区</label>
+        <select name="district" id="district">
+            <option value="">--请选择--</option>
+            <option value="武侯区">武侯区</option>
+            <option value="金牛区">金牛区</option>
+            <option value="温江区">温江区</option>
+            <option value="郫都区">郫都区</option>
+            <option value="高新区">高新区</option>
+            <option value="双流区">双流区</option>
+        </select><br>
+        <div class="field-name">
+            <label for="detailsAddr">详细地址：</label></div>
+        <input type="text" id="detailsAddr" name="detailsAddr"><br>
+        <div class="field-name">
+            <label>兴趣/爱好：</label></div>
+        <label for="basketball">篮球</label>
+        <input type="checkbox" id="basketball" name="favorite">
+        <label for="football">足球</label>
+        <input type="checkbox" id="football" name="favorite">
+        <label for="swimming">游泳</label>
+        <input type="checkbox" id="swimming" name="favorite">
+        <br>
+        <div class="field-name"></div>
+        <input type="submit" value="提交">
+        <input type="button" value="清空">
+    </fieldset>
+</form>
+<script src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.field-name{
+    width:88px;
+    height:auto;
+    text-align: right;
+    display: inline-block;
+    margin: 10px 0;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
