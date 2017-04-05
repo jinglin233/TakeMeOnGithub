@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+    position: relative;
+    /*hidden visible scroll*/
+}
+.item-wrapper{
+    width: 100%;
+    height:auto;
+    position: absolute;
+    top:0;
+    left:0;
+   transition: top 0.9s ;
+}
+.main-item {
+    width: 100%;
+    height: 100vh;
+    background: #bfb8c1;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-item:nth-child(2) {
+    background: red;
+}
+.carousel{
+    width:100%;
+    height:100%;
+    position: absolute;
+    overflow: hidden;
+    top:0;
+    left:0;
+}
+.carousel img{
+    width:100%;
+}

@@ -1,0 +1,50 @@
+html{
+    font-size: 62.5%;
+
+}
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: url("backgrand-home.png") no-repeat;
+    background-size:100% auto;
+}
+header{
+    color:#fff
+}
+li{
+    list-style: none;
+}
+img{
+    width:100%;
+}
+#logo{
+    margin:4vw;
+    width: 9vw;
+
+}
+.word{
+    margin-top: 16vw;
+}
+.word span{
+    margin-top:20vw;
+    color: #FFFDC6;
+}
+section{
+    background: #f8f1dd;
+}
+.container{
+    margin-top:60vw;
+    padding: 0 7vw;
+}
+.btn{
+    padding: 12px;
+}
+
+.instruction ul li{
+    margin-top:3vw;
+    background: #fff;
+    padding: 2vw;
+    text-indent:1rem;
+}

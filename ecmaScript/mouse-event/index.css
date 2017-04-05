@@ -1,0 +1,39 @@
+body{
+    margin:0;
+    padding:0;
+}
+.container{
+    width:100px;
+    height:100px;
+    background: black;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+.container .pin{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+}
+.container .pin:nth-child(1){
+    left: -5px;
+    top:-5px;
+    cursor: nw-resize;
+}
+.container .pin:nth-child(2){
+    right: -5px;
+    top:-5px;
+    cursor: ne-resize;
+}
+.container .pin:nth-child(3){
+    right:-5px;
+    bottom:-5px;
+    cursor: nw-resize;
+}
+.container .pin:nth-child(4){
+    left:-5px;
+    bottom:-5px;
+    cursor: ne-resize;
+}

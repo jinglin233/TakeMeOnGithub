@@ -1,0 +1,10 @@
+.container{
+    width:800px;
+    height:500px;
+    background-color: black;
+}
+.container .item{
+    width:160px;
+    height:100px;
+
+}

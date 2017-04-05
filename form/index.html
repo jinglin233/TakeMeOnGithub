@@ -6,29 +6,30 @@
     <link rel="stylesheet" href="./style/form.css">
 </head>
 <body>
-<form id="formContainer" action="#" style="width: 500px" >
+<form id="formContainer" action="" style="width: 500px">
     <fieldset>
         <legend>注册信息</legend>
         <div class="field-name">
             <label for="userName">用户名：</label></div>
-        <input required maxlength="9" type="text" name="userName" id="userName" ><br>
+        <input required maxlength="9" type="text" name="userName" id="userName"><br>
         <div class="field-name">
             <label for="password">密码：</label></div>
         <input required minlength="6" maxlength="15" type="password" name="password" id="password"><br>
         <div class="field-name">
             <label for="confirmPwd">确认密码：</label></div>
-        <input type="password" id="confirmPwd"><br>
+        <input type="password" id="confirmPwd" required><br>
         <div class="field-name">
             <label for="email">邮箱：</label></div>
         <input type="email" name="email" id="email" required><br>
         <div class="field-name">
             <label for="mobileNumber">手机号码：</label></div>
-        <input type="tel" name="mobileNumber" id="mobileNumber"><br>
+        <input type="tel" name="mobileNumber" id="mobileNumber" required><br>
         <div class="field-name">
             <label>头像</label>
         </div>
         <img src="/TakeMeOnGithub/form/image/a.jpg" alt=""/><br>
-        <div class="field-name"></div><input type="file" name="icon" required>
+        <div class="field-name"></div>
+        <input type="file" name="icon" required>
     </fieldset>
     <fieldset>
         <legend>用户基本信息</legend>
@@ -88,10 +89,11 @@
         <label for="swimming">游泳</label>
         <input type="checkbox" id="swimming" name="favorite">
         <br>
-        <div class="field-name"></div>
-        <input type="submit" value="提交">
-        <input type="button" value="清空">
+
     </fieldset>
+    <div class="field-name"></div>
+    <input type="submit" value="提交">
+    <input type="button" value="清空">
 </form>
 <script src="form.js"></script>
 </body>

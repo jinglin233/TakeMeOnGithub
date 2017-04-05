@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//	var phoneNumber = new RegExp(/^0\d{2,3}[-]\d{7,8}$/);
+//	var cdPhone = "028-66382388";
+//	var fl = phoneNumber.test(cdPhone);
+//	console.log("成都座机号匹配结果：" + fl);
+//
+//	var ncPhone = "0817-5534683";
+//	fl = phoneNumber.test(ncPhone);
+//	console.log("南充座机号匹配结果：" + fl);
+
+
+	var qqNumber = new RegExp(/^[1-9]\d{3,10}$/);
+	var qqNum = "1430624494";
+	var fl = qqNumber.test(qqNum);
+	console.log("qq号匹配结果：" + fl);
+
+    var emailReg=/^[a-z1-9]{1,10}[@]\w{1,10}[\.](com)$/;
+
+	//    /^1[34578]\d{9}$/
+	var reg = new RegExp("ell");
+	var sources = "hello world";
+	var flag = reg.test(sources);
+	//	console.log(flag);
+
+	var result = reg.exec(sources);//取出字符串中匹配该规则的字符串片段
+    /*console.log(result);
+     console.log(typeof result);*/
+	reg = new RegExp("o", "g");//g表示全局匹配
+	result = sources.match(reg);
+	//	console.log(result);
+	//i 大小写匹配
+	reg = new RegExp("o", "ig");
+	result = "hello0 world".match(reg);
+	console.log(result);
+
+</script>
+</body>
+</html>
