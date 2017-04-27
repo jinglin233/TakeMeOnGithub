@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            position: relative;
+        }
+
+        .pin {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+        }
+
+        .pin:nth-child(1) {
+            left: -5px;
+            top: -5px;
+        }
+
+        .pin:nth-child(2) {
+            right: -5px;
+            top: -5px;
+        }
+
+        .pin:nth-child(3) {
+            right: -5px;
+            bottom: -5px;
+        }
+
+        .pin:nth-child(4) {
+            left: -5px;
+            bottom: -5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="pin"></div>
+    <div class="pin"></div>
+    <div class="pin"></div>
+    <div class="pin"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+exports.mysql={
+	host:'localhost',
+	user:'root',
+	password:'lin553486',
+	database:'takeMeOnGithub',
+	dialect:'mysql',
+	connectionLimit:50,
+	port:3306
+};

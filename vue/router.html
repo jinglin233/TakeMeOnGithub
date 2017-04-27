@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>vue路由</title>
+    <link rel="stylesheet" href="router.css">
+</head>
+<body>
+<div id="app">
+    <h1>hello</h1>
+    <router-view>
+
+    </router-view>
+    <footer>
+        <div>
+           <router-link to="/home">
+               主页
+           </router-link>
+        </div>
+        <div>
+            <router-link to="/router2">
+                导航二
+            </router-link>
+        </div>
+        <div>
+            <router-link to="/router3">
+                导航三
+            </router-link>
+        </div>
+        <div>
+            <router-link to="/profile">
+                导航四
+            </router-link>
+        </div>
+    </footer>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="router.js"></script>
+</body>
+</html>

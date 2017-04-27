@@ -1,0 +1,18 @@
+body{
+    margin:0;
+    padding:0;
+}
+.student-information{
+    width:1200px;
+    height:auto;
+    margin: 20px auto;
+}
+.row{
+    width:100%;
+    height:auto;
+}
+.column{
+    width:20%;
+    float: left;
+    text-align: center;
+}

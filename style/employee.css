@@ -1,0 +1,23 @@
+body{
+    margin:0;
+    padding:0;
+}
+.container{
+
+    height:auto;
+    margin: 20px auto;
+}
+.container{
+    position: relative;
+}
+#paginations{
+    position: absolute;
+    bottom:-50px;
+}
+#avator{
+    display: inline;
+}
+td img{
+    width:40px;
+    height:40px;
+}

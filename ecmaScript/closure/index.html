@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<script>
+
+    var a ="abc";
+    function output() {
+        var x = "out put x";
+	    console.log(a + x);
+	    //函数内部嵌套函数可以访问该函数的局部变量x
+	    function inner() {
+		    console.log("inner:" + x);
+	    }
+	    inner();
+    }
+    output();
+
+    //函数被调用执行完成后，其内部的局部变量将会被垃圾回收机制回收掉
+    //所以外部作用域不能访问内部作用域的变量
+    //console.log(x);
+
+    //外部作用域怎样访问嵌套作用域的变量
+    function wrapper() {
+        var name ="wrapper";
+        return function print(thing) {
+	        console.log(name+thing);
+        }
+    }
+
+    var flag=wrapper();
+    flag("未消失");
+
+    //什么叫闭包
+    //闭包就是能够读取其他函数内部变量的函数。
+    //由于js中，之后函数内部的子函数才能读取局部变量，所以
+    //可以把闭包理解为，定义在函数内部的函数
+
+    //闭包的作用
+    //1、可以读取函数内部的变量
+    //2、让这些变量的值始终保持在内存中
+function f1() {
+    var n=999;
+    window.nAdd=function () {
+        n+=1;
+    };
+    function f2() {
+        alert(n)
+    }
+    return f2;
+}
+var result=f1();
+    result();
+    nAdd();
+    result();
+
+    //闭包的缺点
+    //1、由于闭包会使函数的内部变量一直保存在内存中，内存消耗很大，
+    //所以不能滥用闭包，否则会造成网页性能问题，（内存泄漏）。
+    //解决办法，在退出函数之前，将不使用的局部变量删除
+
+    //增强理解
+    var name ="this window";
+    var object={
+    	name:"my object",
+        getNameFn:function () {
+            return function () {
+                return this.name;
+
+            }
+        }
+    };
+    var resul=object.getNameFn();
+    var f =resul();
+    alert(f);
+
+
+    //理解2
+    var ggName ="this window";
+    var obj={
+	    name:"my object",
+	    getNameFn:function () {
+	    	var that=this;
+		    return function () {
+			    return that.name;
+		    }
+	    }
+    };
+    var handle=obj.getNameFn;
+    alert(handle()());
+   alert(obj.getNameFn()());
+
+    // es5中变量作用域有全局作用域和函数作用域
+    //函数作用域可以互相嵌套
+</script>
+</body>
+</html>

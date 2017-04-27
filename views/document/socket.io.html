@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>socket.io</title>-->
+    <!--<style>-->
+        <!--#container {-->
+            <!--color: #000;-->
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="container"></div>-->
+<!--<input type="text" id="chatInput" title="输入聊天">-->
+<!--<input type="button" id="sendMsg" value="发送">-->
+<!--<script src="/socket.io/socket.io.js"></script>-->
+<!--<script>-->
+	<!--var container = document.querySelector("#container");-->
+	<!--var sendBtn = document.querySelector("#sendMsg");-->
+	<!--var chatInput = document.querySelector("#chatInput");-->
+	<!--var socket = io("http://192.168.1.4:8212/");-->
+	<!--socket.on("now", function (data) {-->
+		<!--container.innerHTML = "服务器时间为：" + data;-->
+	<!--});-->
+	<!--sendBtn.onclick = function () {-->
+		<!--socket.emit("chat", {name:"敬林",data:chatInput.value})-->
+	<!--};-->
+	<!--socket.on("chat", function (obj) {-->
+<!--//		console.log("id="+obj.id+"data="+obj.data);-->
+		<!--if(obj.name=='敬林'){-->
+			<!--console.log('是本人');-->
+		<!--}else{-->
+			<!--console.log('是其他人');-->
+		<!--}-->
+	<!--});-->
+    <!--socket.emit("group1")-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

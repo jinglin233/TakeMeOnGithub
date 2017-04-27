@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE</title>
+    <style>
+        .fade-enter-active,.fade-leave-active{
+            transition: opacity 1.5s;
+        }
+        .fade-enter,.fade-leave-active{
+            opacity: 0 ;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<div id="app-2">
+    <span v-bind:title="message">
+        <!--v-bind绑定标签的属性-->
+        00
+    </span>
+</div>
+<div id="app-3">
+    <p v-if="seen">现在你看到我了</p>
+</div>
+<div id="toggleFade">
+   <button v-on:click="show=!show">
+       toggle
+   </button>
+    <transition name="fade">
+           <p v-if="show">你好！</p>
+       </transition>
+
+</div>
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+        {{todo.text}}
+    </li>
+    </ol>
+</div>
+
+<div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">
+        逆转消息
+    </button>
+</div>
+
+<div id="app-6">
+    <p>{{message}}</p>
+    <input title="v-model" type="text" v-model="message">
+</div>
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ol>
+</div>
+<div style=" direction:rtl; unicode-bidi:bidi-override">文字被反转过来了</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

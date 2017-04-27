@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+<script>
+    var source={
+    	name:"source",
+        output:function () {
+	        console.log(this.name);
+        }
+    };
+    function Human(gender, age, name) {
+        this.gender=gender;
+        this.age=age;
+        this.name=name;
+    }
+    Human.prototype=source;
+    //Human.prototype
+    //Human.__proto__
+
+  var zhangGuorong = new Human("男","40","张国荣");
+  zhangGuorong.output();
+
+
+    var superObj={
+  	p1:"p1",
+        p2:0,
+        p3:true,
+        p4:null
+    };
+    var keyVal=function (name,gender) {
+        this.name=name;
+        this.gender=gender;
+    };
+    keyVal.prototype=superObj;
+    var dictionary=new keyVal("王二小","男");
+    console.log(dictionary);
+    for(var k in dictionary){
+    	if(dictionary.hasOwnProperty(k)){
+		    console.log(k+":"+dictionary[k]); //枚举值
+        }
+    }
+
+    // key/value 键值对 就是json
+</script>
+</body>
+</html>
