@@ -140,7 +140,103 @@ var ReportUnit = sequelize.define("reportUnit", {
 			type: Sequelize.STRING
 		}
 	});
-
+let friendship=sequelize.define('friendship',{
+	id:{
+		type:Sequelize.STRING,
+		primaryKey:true
+	},
+	user:{
+		type:Sequelize.STRING
+	},
+	friend:{
+		type:Sequelize.STRING
+	},
+	status:{
+		type:Sequelize.INTEGER,
+		defaultValue:0
+	},
+	remark:{
+		type:Sequelize.STRING
+	}
+});
+let msgRecord = sequelize.define('msgRecord',{
+	id:{
+		type:Sequelize.STRING,
+		primaryKey:true
+	},
+	sender:{
+		type:Sequelize.STRING
+	},
+	receiver:{
+		type:Sequelize.STRING
+	},
+	type:{
+		type:Sequelize.INTEGER,
+		defaultValue:0
+	},
+	status:{
+		type:Sequelize.INTEGER,
+		defaultValue:0
+	},
+	remark:{
+		type:Sequelize.STRING
+	}
+});
+exports.addFriend=function (userId,friendId) {
+	return friendship.sync().then(()=>{
+		 friendship.create({
+	       id:uuid(),
+	       user:userId,
+	       friend:friendId
+       });
+		return  friendship.create({
+	       id:uuid(),
+	       user:friendId ,
+	       friend:userId
+       })
+	})
+};
+exports.removeFriend=function (userId,friendId) {
+	return friendship.sync().then(()=>{
+		return friendship.update({
+			status:2
+		},{
+			where:{
+				$or:[
+					{
+						$and:[
+							{
+								user:userId
+							},
+							{
+								friend:friendId
+							}
+						]
+					},
+					{
+						$and:[
+						{
+							user:friendId
+						},
+						{
+							friend:userId
+						}
+					]
+					}
+				]
+			}
+		});
+	})
+};
+exports.getFriends=function (userId) {
+	return friendship.sync().then(()=>{
+		return friendship.findAll({
+			where:{
+				user:userId
+			}
+		})
+	})
+};
 exports.createReportUnit = function (unit) {
 	return ReportUnit.sync().then(function () {
 		return ReportUnit.create({
@@ -217,6 +313,11 @@ exports.getUser = function () {
 		   }
 		});
 	})
+};
+exports.findUserByWhere = function (where) {
+	return User.sync().then(function () {
+		return User.findOne({where:where});
+	});
 };
 exports.getDocument = function () {
 	return Document.sync().then(function () {

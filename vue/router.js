@@ -8,7 +8,7 @@ var router3Component={template:'<div>第三页</div>'};
 var profileComponent={template:'<div>用户信息</div>'};
 
 var routes=[
-{path:'/home',component:homeComponent},
+{path:'/home.vue',component:homeComponent},
 {path:'/router2',component:router2Component},
 {path:'/router3',component:router3Component},
 {path:'/profile',component:profileComponent}

@@ -5,23 +5,95 @@
     <title>对象</title>
 </head>
 <body>
+<div id="ageWrapper"></div>
+<input type="text" id="ageInput" title="">
+<div id="forArray">
+    <div id="item">
+
+    </div>
+</div>
 <script>
-    var student={
-    	name:"李金奇",
-    	gender:"男",
-    	age:18,
-    	run:function (where) {
-		    console.log(this.name+"在"+where+"跑步");
-	    },
-	    girl :{
-		    name:"unknow",
-		    gender:"女"
-	    }
-    };
-    var student2=student;
-    student2.name="赵川";
-    console.log(student.name);
-    console.log(student2.name);
+	var wrapper = document.querySelector("#ageWrapper");
+	var ageInput = document.querySelector("#ageInput");
+
+	var Animal = {};
+
+	Object.defineProperty(Animal, "age", {
+		enumerable: true,   //可枚举访问属性
+		configurable: true,
+		set: function (value) {
+			wrapper.innerHTML = value;
+		}
+	});
+
+	console.log("枚举访问属性age：" + Animal["age"]);
+	Animal.age = 233;
+	ageInput.onkeyup = function () {
+		Animal.age = ageInput.value
+	};
+
+	var forArray = document.querySelector("#forArray");
+	function updateForDom(source) {
+		source.forEach(function (data) {
+			var temp = document.createElement("div");
+			temp.innerText = data;
+			forArray.appendChild(temp);
+		})
+	}
+	var animalFavorites=[];
+	Object.defineProperty(Animal, "favorites", {
+		set: function (value) {
+			animalFavorites = value;
+			updateForDom(animalFavorites);
+		},
+        get:function () {
+            return animalFavorites
+        }
+	});
+	//调用set
+    Animal.favorites=[1212,23123,42354365];
+    //调用get
+	console.log(Animal.favorites);
+
+	Animal.favorites.push=function (favorite) {
+                 this.length++;
+                 this[this.length-1]=favorite;
+                 updateForDom(this);
+                 return this.length;
+	};
+
+
+
+//	function User(name, gender, favorite) {
+//		this.name = name;
+//		this.gender = gender;
+//		this.favorite = favorite;
+//		this.occupation = {};
+//	}
+//
+//
+//	var xiaoming = new User('小明', '男', '["女","game"]');
+//	var variable = "";
+//	variable = null;
+//	variable = {};
+//	variable = undefined;
+
+	//	var student = {
+	//		name: "李金奇",
+	//		gender: "男",
+	//		age: 18,
+	//		run: function (where) {
+	//			console.log(this.name + "在" + where + "跑步");
+	//		},
+	//		girl: {
+	//			name: "unknow",
+	//			gender: "女"
+	//		}
+	//	};
+	//	var student2 = student;
+	//	student2.name = "赵川";
+	//	console.log(student.name);
+	//	console.log(student2.name);
 </script>
 </body>
 </html>
